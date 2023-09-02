@@ -1,3 +1,8 @@
+const client = contentful.createClient({
+  space: '135mbuu2omwb',
+  accessToken: 'hM0O0NxMSH2_zMMH8DV20cOsbw-blzbdtyoikKuyL2E',
+});
+
 // Variables
 
 const cartBtn = document.querySelector('.cart-btn');
@@ -16,14 +21,17 @@ let cart = [];
 // buttons
 let buttonsDOM = [];
 
-// getting hte products
+// getting the products
 class Products {
   async getProducts() {
     try {
-      let resp = await fetch('products.json');
-      let data = await resp.json();
+      let contentfulResp = await client.getEntries();
+      console.log(contentfulResp.items);
+      // let resp = await fetch('products.json');
+      // let data = await resp.json();
+      // console.log(data);
 
-      let products = data.items;
+      let products = contentfulResp.items;
       products = products.map((item) => {
         const { title, price } = item.fields;
         const { id } = item.sys;
@@ -252,3 +260,8 @@ document.addEventListener('DOMContentLoaded', () => {
       ui.cartLogic();
     });
 });
+
+const footerYear = document.querySelector('.year');
+let date = new Date().getFullYear();
+footerYear.innerText = date;
+console.log(date);

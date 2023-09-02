@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700');
 
 :root {
-  --primaryColor: #f09d51;
+  --primaryColor: #6b705c;
   --mainWhite: #fff;
-  --mainBlack: #222;
+  --mainBlack: #283618;
   --mainGrey: #ececec;
   --mainSpacing: 0.1rem;
   --mainTransition: all 0.3s linear;
@@ -12,6 +12,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 body {
   color: var(--mainBlack);
@@ -27,7 +31,7 @@ body {
   width: 100%;
   display: flex;
   align-items: center;
-  background: rgb(231, 226, 221);
+  background: #fffdf0;
   z-index: 1;
 }
 .navbar-center {
@@ -66,7 +70,7 @@ body {
 }
 .banner {
   text-align: center;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.5);
   display: inline-block;
   padding: 2rem;
 }
@@ -82,10 +86,11 @@ body {
   letter-spacing: var(--mainSpacing);
   font-size: 1rem;
   background: var(--primaryColor);
-  color: var(--mainBlack);
+  color: var(--mainWhite);
   border: 1px solid var(--primaryColor);
   transition: var(--mainTransition);
   cursor: pointer;
+  text-decoration: none;
 }
 .banner-btn:hover {
   background: transparent;
@@ -260,3 +265,14 @@ body {
 }
 
 /* --------------- End of Cart ---------------- */
+
+/* --------------- Footer ---------------- */
+.footer {
+  background-color: var(--mainBlack);
+}
+.text {
+  color: var(--mainWhite);
+  text-align: center;
+  padding: 15px 0;
+}
+/* --------------- End of Footer ---------------- */
